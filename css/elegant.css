@@ -1,0 +1,296 @@
+/* 
+   Elegant Styling Enhancement
+   This CSS adds sophisticated styling for a more classic, luxurious look
+*/
+
+/* Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.hero-title, .page-title {
+    font-weight: 700;
+}
+
+/* Section Title Animation */
+.section-title {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.section-title::before {
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.section-title .title-animation {
+    display: inline-block;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.section-header.animated .section-title .title-animation {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Add animation delay for each letter */
+.section-title .title-animation:nth-child(1) { transition-delay: 0.05s; }
+.section-title .title-animation:nth-child(2) { transition-delay: 0.1s; }
+.section-title .title-animation:nth-child(3) { transition-delay: 0.15s; }
+.section-title .title-animation:nth-child(4) { transition-delay: 0.2s; }
+.section-title .title-animation:nth-child(5) { transition-delay: 0.25s; }
+.section-title .title-animation:nth-child(6) { transition-delay: 0.3s; }
+.section-title .title-animation:nth-child(7) { transition-delay: 0.35s; }
+.section-title .title-animation:nth-child(8) { transition-delay: 0.4s; }
+.section-title .title-animation:nth-child(9) { transition-delay: 0.45s; }
+.section-title .title-animation:nth-child(10) { transition-delay: 0.5s; }
+
+.subtitle {
+    font-style: italic;
+}
+
+/* Classic Decorative Elements */
+.decorative-border {
+    position: relative;
+}
+
+.decorative-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 140, 66, 0.1);
+    border-radius: 10px;
+    transform: translate(8px, 8px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Elegant Card Styling */
+.service-card, .frame-card, .feature, .value-card, .benefit-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backface-visibility: hidden;
+}
+
+.service-card:hover, .frame-card:hover, .feature:hover, .value-card:hover, .benefit-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card::after, .frame-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+    transition: width 0.4s ease;
+}
+
+.service-card:hover::after, .frame-card:hover::after {
+    width: 100%;
+}
+
+/* Image Hover Effects */
+.service-image, .frame-image {
+    overflow: hidden;
+    position: relative;
+}
+
+.service-image::after, .frame-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 140, 66, 0) 0%, rgba(255, 140, 66, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.service-card:hover .service-image::after, .frame-card:hover .frame-image::after {
+    opacity: 1;
+}
+
+/* Elegant Button Styling */
+.btn {
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+    box-shadow: 0 4px 15px rgba(255, 140, 66, 0.2);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
+    box-shadow: 0 6px 20px rgba(255, 140, 66, 0.3);
+}
+
+/* Section Headers */
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.section-header:hover .section-title::after {
+    transform: scaleX(1.5);
+}
+
+/* Navigation Enhancements */
+.navbar-links a {
+    position: relative;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar-links .active a::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Testimonial Quote Mark */
+.testimonials-container::before {
+    content: '\201C';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 6rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    opacity: 0.1;
+    line-height: 0.5;
+}
+
+/* Feature Icons Enhancement */
+.feature i {
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+}
+
+.feature i::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    background-color: rgba(255, 140, 66, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feature:hover i::after {
+    transform: scale(1);
+}
+
+/* Classic Page Background */
+body {
+    background-color: #fefefe;
+    background-image: 
+        radial-gradient(rgba(255, 140, 66, 0.03) 1px, transparent 1px),
+        radial-gradient(rgba(255, 140, 66, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+/* Section Background Accents */
+.hero-section, .frames-section, .features-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    width: 40%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(255, 140, 66, 0.05) 0%, rgba(255, 140, 66, 0) 70%);
+    z-index: 0;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+/* Classic Dividers */
+.classic-divider {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.classic-divider::before,
+.classic-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 140, 66, 0.2), transparent);
+}
+
+.classic-divider::before {
+    margin-right: 1rem;
+}
+
+.classic-divider::after {
+    margin-left: 1rem;
+}
+
+.classic-divider span {
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .service-card::after, .frame-card::after {
+        display: none;
+    }
+    
+    .hero-section::after {
+        opacity: 0.5;
+    }
+} 
